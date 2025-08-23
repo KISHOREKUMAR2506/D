@@ -289,7 +289,7 @@ function InteractiveConclusionSection() {
                         animationFillMode: "forwards"
                       }}
                     >
-                      Once again Happy Birthday My Love "D" 🎀
+                      Once again Happy Birthday My Love &quot;D&quot; 🎀
                     </div>
                   </div>
                 </div>
@@ -310,7 +310,18 @@ function InteractiveConclusionSection() {
 }
 
 export default function MySpecialLetter() {
-  const [hearts, setHearts] = useState<{ id: number; x: number; y: number }[]>([]);
+  type ConfettiHeart = {
+    id: number;
+    x: number;
+    y: number;
+    dx: number;
+    dy: number;
+    delay: number;
+    size: number;
+    rotate: number;
+    color: string;
+  };
+  const [hearts, setHearts] = useState<ConfettiHeart[]>([]);
   const [isPlaying, setIsPlaying] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -322,7 +333,7 @@ export default function MySpecialLetter() {
       x: e.clientX - rect.left,
       y: e.clientY - rect.top,
     };
-    setHearts(prev => [...prev, newHeart]);
+    // setHearts(prev => [...prev, newHeart]);
     setTimeout(() => {
       setHearts(prev => prev.filter(heart => heart.id !== newHeart.id));
     }, 3000);
