@@ -1,7 +1,8 @@
 "use client";
 import { ArrowRight, Heart, Pause, Play, RotateCcw, Sparkles, Trophy } from 'lucide-react';
+import Image from 'next/image';
 import { useRouter } from 'next/navigation';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState, useCallback } from 'react';
 
 type Card = {
   id: number;
@@ -39,6 +40,19 @@ export default function RomanticMemoryGame() {
     "/images/photo4.jpg",
     "/images/photo5.jpg",
   ];
+  
+  const shuffleCards = useCallback(() => {
+    const shuffled = [...cardImages, ...cardImages]
+      .map((img) => ({ id: Math.random(), img, matched: false }))
+      .sort(() => Math.random() - 0.5);
+    setCards(shuffled);
+    setTurns(0);
+    setMatches(0);
+    setGameCompleted(false);
+    setShowCelebration(false);
+    setChoiceOne(null);
+    setChoiceTwo(null);
+  }, [cardImages]);
 
   // Handle mouse movement for background effects
   useEffect(() => {
@@ -62,7 +76,7 @@ export default function RomanticMemoryGame() {
   // Initialize game
   useEffect(() => {
     shuffleCards();
-  }, []);
+  }, [shuffleCards]);
 
   // Compare selected cards
   useEffect(() => {
@@ -91,20 +105,6 @@ export default function RomanticMemoryGame() {
       createVictoryAnimation();
     }
   }, [matches, gameCompleted]);
-
-  const shuffleCards = () => {
-    const shuffled = [...cardImages, ...cardImages]
-      .map((img) => ({ id: Math.random(), img, matched: false }))
-      .sort(() => Math.random() - 0.5);
-    setCards(shuffled);
-    setTurns(0);
-    setMatches(0);
-    setGameCompleted(false);
-    setShowCelebration(false);
-    setChoiceOne(null);
-    setChoiceTwo(null);
-  };
-
   const handleChoice = (card: Card) => {
     if (!disabled && !card.matched) {
       choiceOne ? setChoiceTwo(card) : setChoiceOne(card);
@@ -271,10 +271,12 @@ export default function RomanticMemoryGame() {
 
                 {/* Card Front (Image) */}
                 <div className="absolute inset-0 rounded-2xl shadow-xl overflow-hidden transform rotate-y-180 backface-hidden border-2 border-white/30">
-                  <img 
-                    src={card.img} 
-                    alt="Our memory" 
+                  <Image
+                    src={card.img}
+                    alt="Our memory"
                     className="w-full h-full object-cover transition-all duration-300"
+                    width={300}
+                    height={300}
                   />
                   {card.matched && (
                     <div className="absolute inset-0 bg-green-500/20 flex items-center justify-center">
@@ -298,7 +300,7 @@ export default function RomanticMemoryGame() {
                 Congratulations!
               </h2>
               <p className="text-xl text-pink-300/90 mb-2">
-                You've matched all our beautiful memories!
+                You&apos;ve matched all our beautiful memories!
               </p>
               <p className="text-lg text-pink-400/80 mb-8">
                 Completed in {turns} turns ✨

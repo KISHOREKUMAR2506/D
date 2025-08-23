@@ -1,6 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import { ArrowLeft, ArrowRight, Heart, Sparkles } from "lucide-react";
+import Image from "next/image";
 import { useRouter } from "next/navigation";
 import React, { useEffect, useRef, useState } from "react";
 
@@ -212,11 +213,13 @@ export default function JustUsGallery() {
                   createHeart(e);
                 }}
               >
-                <img
+                <Image
                   src={couplePhotos[activePhoto].src}
                   alt={`Couple photo ${activePhoto + 1}`}
                   className="w-full h-full object-cover transition-all duration-700 group-hover:scale-105"
                   draggable={false}
+                  width={800}
+                  height={600}
                 />
 
                 {/* Overlay gradient */}
@@ -256,10 +259,12 @@ export default function JustUsGallery() {
           onClick={() => setIsFullscreen(false)}
         >
           <div className="relative max-w-6xl w-full">
-            <img
+            <Image
               src={couplePhotos[activePhoto].src}
               alt={`Couple photo ${activePhoto + 1}`}
               className="w-full h-auto max-h-[90vh] object-contain rounded-2xl"
+              width={1200}
+              height={900}
             />
             <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-8 rounded-b-2xl"></div>
             <button
@@ -303,7 +308,7 @@ export default function JustUsGallery() {
             }}
           >
             <Heart className="w-6 h-6 animate-pulse text-pink-300" />
-            Here's a special letter for you 💌
+            Here&apos;s a special letter for you 💌
           </motion.button>
         </div>
       </div>

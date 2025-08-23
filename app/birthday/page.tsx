@@ -158,7 +158,7 @@ export default function BirthdayPage() {
                 whiteSpace: "nowrap",
               }}
             >
-              Happy 21st Birthday, My Love &quot;D&quot;
+              Happy 21st Birthday, My Love &ldquo;D&rdquo;
             </span>
           </h1>
           <div className="text-4xl md:text-6xl mb-8">
@@ -181,9 +181,9 @@ export default function BirthdayPage() {
                 className="text-xl md:text-2xl text-rose-700 font-medium leading-relaxed"
                 style={{ fontFamily: "'Dancing Script', cursive" }}
               >
-                &quot;Every moment I’ve enjoyed with you has been magical, and now it’s your special day, Dheepsz..! 
+                &ldquo;Every moment I&apos;ve enjoyed with you has been magical, and now it&apos;s your special day, Dheepsz..! 
                 Wishing you a pleasant and memorable year ahead. May this day be filled with all the joy, love, and happiness forever. 🥰🎀
-                Oii Ready for your surprise? 🤌🏻&quot;
+                Oii Ready for your surprise? 🤌🏻&rdquo;
               </p>
             </div>
           </div>

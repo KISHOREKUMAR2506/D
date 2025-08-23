@@ -22,11 +22,31 @@ const successMessages = [
 
 // Heart Confetti Burst Component
 function HeartConfettiBurst({ show }: { show: boolean }) {
-  const [hearts, setHearts] = useState<any[]>([]);
+  const [hearts, setHearts] = useState<Array<{
+    id: number;
+    x: number;
+    y: number;
+    dx: number;
+    dy: number;
+    delay: number;
+    size: number;
+    rotate: number;
+    color: string;
+  }>>([]);
 
   useEffect(() => {
     if (show) {
-      const burst: any[] = [];
+      const burst: Array<{
+        id: number;
+        x: number;
+        y: number;
+        dx: number;
+        dy: number;
+        delay: number;
+        size: number;
+        rotate: number;
+        color: string;
+      }> = [];
       const count = 40;
       for (let i = 0; i < count; i++) {
         const angle = (i / count) * 2 * Math.PI;
@@ -82,8 +102,21 @@ function InteractiveConclusionSection() {
   const [selectedFeeling, setSelectedFeeling] = useState<{ id: string } | null>(null);
   const [showResult, setShowResult] = useState(false);
   const [rejectionCount, setRejectionCount] = useState(0);
-  const [celebrationHearts, setCelebrationHearts] = useState<any[]>([]);
-  const [confetti, setConfetti] = useState<any[]>([]);
+  const [celebrationHearts, setCelebrationHearts] = useState<Array<{
+    id: number;
+    x: number;
+    y: number;
+    delay: number;
+  }>>([]);
+  const [confetti, setConfetti] = useState<Array<{
+    id: number;
+    x: number;
+    y: number;
+    color: string;
+    delay: number;
+    rotation: number;
+    scale: number;
+  }>>([]);
   const [showFinal, setShowFinal] = useState(false);
   const [showConfetti, setShowConfetti] = useState(false);
 
@@ -115,7 +148,7 @@ function InteractiveConclusionSection() {
     setTimeout(() => setConfetti([]), 5000);
   };
 
-  const handleFeelingClick = (feeling: any) => {
+  const handleFeelingClick = (feeling: { id: string; rejected: boolean }) => {
     setSelectedFeeling(feeling);
     if (feeling.rejected) {
       setRejectionCount(prev => prev + 1);
