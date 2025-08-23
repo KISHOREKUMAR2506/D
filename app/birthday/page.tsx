@@ -1,7 +1,7 @@
 "use client";
 import { Heart, Sparkles } from "lucide-react";
 import { useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 
 // Types for hearts and sparkles
 type HeartObj = {
@@ -36,13 +36,16 @@ const AnimatedButton = ({
 
 export default function BirthdayPage() {
   const router = useRouter();
-  const [hearts, setHearts] = useState<HeartObj[]>([]);
+  type Heart = {
+    id: number;
+    left: number;
+    delay: number;
+    duration: number;
+    size: number;
+  };
+  const [hearts, setHearts] = useState<Heart[]>([]);
   const [sparkles, setSparkles] = useState<SparkleObj[]>([]);
   const [showMessage, setShowMessage] = useState(false);
-
-  const handleRedirect = () => {
-    router.push("/memorygame");
-  };
 
   // Generate floating hearts and sparkles
   useEffect(() => {
@@ -76,6 +79,14 @@ export default function BirthdayPage() {
     const sparkleInterval = setInterval(generateSparkles, 4000);
     return () => clearInterval(sparkleInterval);
   }, []);
+
+  const shuffleCards = useCallback(() => {
+    // Your shuffle logic here
+  }, []);
+
+  useEffect(() => {
+    shuffleCards();
+  }, [shuffleCards]);
 
   return (
     <main className="relative min-h-screen flex flex-col items-center justify-center text-center overflow-hidden">
@@ -131,17 +142,7 @@ export default function BirthdayPage() {
 
       {/* Main Content Container */}
       <div className="relative z-10 max-w-6xl mx-auto px-4">
-        {/* Pre-heading */}
-        <div
-          className="mb-6 opacity-0"
-          style={{
-            animation: "fadeInUp 1s 0.5s forwards",
-          }}
-        >
-
-        </div>
-
-        {/* Main Heading - Single Line */}
+        {/* Main Heading */}
         <div
           className="opacity-0 transform translate-y-10"
           style={{
@@ -157,7 +158,7 @@ export default function BirthdayPage() {
                 whiteSpace: "nowrap",
               }}
             >
-              Happy 21st Birthday,My Love 'D"
+              Happy 21st Birthday, My Love &quot;D&quot;
             </span>
           </h1>
           <div className="text-4xl md:text-6xl mb-8">
@@ -174,22 +175,21 @@ export default function BirthdayPage() {
         {/* Romantic Message */}
         {showMessage && (
           <div className="relative max-w-2xl mx-auto mb-12 opacity-0" style={{ animation: "fadeInUp 1s 2s forwards" }}>
-            {/* Glow background */}
             <div className="absolute -inset-4 rounded-3xl bg-gradient-to-r from-pink-300 via-rose-200 to-yellow-100 blur-2xl opacity-60 z-0"></div>
             <div className="relative bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 shadow-2xl z-10">
               <p
                 className="text-xl md:text-2xl text-rose-700 font-medium leading-relaxed"
                 style={{ fontFamily: "'Dancing Script', cursive" }}
               >
-                "“Every moment I’ve enjoyed with you has been magical, and now it’s your special day, Dheepsz..! 
+                &quot;Every moment I’ve enjoyed with you has been magical, and now it’s your special day, Dheepsz..! 
                 Wishing you a pleasant and memorable year ahead. May this day be filled with all the joy, love, and happiness forever. 🥰🎀
-                Oii Ready for your surprise? 🤌🏻"
+                Oii Ready for your surprise? 🤌🏻&quot;
               </p>
             </div>
           </div>
         )}
 
-        {/* Enhanced Button */}
+        {/* Explore Button to Letter Page */}
         <div
           className="opacity-0"
           style={{
@@ -197,11 +197,10 @@ export default function BirthdayPage() {
           }}
         >
           <div className="relative inline-block">
-            {/* Button Glow Effect */}
             <div className="absolute -inset-2 bg-gradient-to-r from-pink-500 to-rose-500 rounded-full blur-xl opacity-30 animate-pulse"></div>
 
             <AnimatedButton
-              onClick={handleRedirect}
+              onClick={() => router.push("/memorygame")}
               text="Vaa innum explore pannalama 🎁"
               className="relative px-12 py-6 rounded-full bg-gradient-to-r from-rose-500 via-pink-500 to-rose-600 
               text-xl md:text-2xl font-bold shadow-2xl
@@ -232,60 +231,23 @@ export default function BirthdayPage() {
         @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap');
 
         @keyframes floatUp {
-          0% {
-            transform: translateY(0) rotate(0deg);
-            opacity: 0.7;
-          }
-          50% {
-            opacity: 1;
-          }
-          100% {
-            transform: translateY(-100vh) rotate(180deg);
-            opacity: 0;
-          }
+          0% { transform: translateY(0) rotate(0deg); opacity: 0.7; }
+          50% { opacity: 1; }
+          100% { transform: translateY(-100vh) rotate(180deg); opacity: 0; }
         }
-
         @keyframes twinkle {
-          0%, 100% {
-            opacity: 0;
-            transform: scale(0.5) rotate(0deg);
-          }
-          50% {
-            opacity: 1;
-            transform: scale(1) rotate(180deg);
-          }
+          0%, 100% { opacity: 0; transform: scale(0.5) rotate(0deg); }
+          50% { opacity: 1; transform: scale(1) rotate(180deg); }
         }
-
         @keyframes fadeInUp {
-          0% {
-            opacity: 0;
-            transform: translateY(30px);
-          }
-          100% {
-            opacity: 1;
-            transform: translateY(0);
-          }
+          0% { opacity: 0; transform: translateY(30px); }
+          100% { opacity: 1; transform: translateY(0); }
         }
-
         @keyframes fadeInScale {
-          0% {
-            opacity: 0;
-            transform: scale(0.8) translateY(20px);
-          }
-          100% {
-            opacity: 1;
-            transform: scale(1) translateY(0);
-          }
+          0% { opacity: 0; transform: scale(0.8) translateY(20px); }
+          100% { opacity: 1; transform: scale(1) translateY(0); }
         }
-
-        @keyframes shimmer {
-          0% {
-            background-position: -1000px 0;
-          }
-          100% {
-            background-position: 1000px 0;
-          }
-        }
+        @keyframes shimmer { 0% { background-position: -1000px 0; } 100% { background-position: 1000px 0; } }
       `}</style>
     </main>
   );
