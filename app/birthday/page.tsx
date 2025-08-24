@@ -154,7 +154,7 @@ export default function BirthdayPage() {
       textShadow: "0 4px 8px rgba(236, 72, 153, 0.3)",
     }}
   >
-    Happy 21st Birthday, My Love "D" 🎀
+    Happy 21st Birthday, My Love  &ldquo;D&rdquo;🎀
   </span>
 </h1>
 
