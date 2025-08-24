@@ -146,18 +146,18 @@ export default function BirthdayPage() {
             animation: "fadeInScale 1.5s 1s forwards",
           }}
         >
-          <h1 className="text-4xl md:text-7xl lg:text-8xl font-bold mb-8 leading-tight">
-            <span
-              className="bg-gradient-to-r from-rose-600 via-pink-500 to-rose-700 bg-clip-text text-transparent"
-              style={{
-                fontFamily: "'Dancing Script', cursive",
-                textShadow: "0 4px 8px rgba(236, 72, 153, 0.3)",
-                whiteSpace: "nowrap",
-              }}
-            >
-              Happy 21st Birthday, My Love&semi;
-            </span>
-          </h1>
+        <h1 className="text-4xl md:text-7xl lg:text-8xl font-bold mb-8 leading-tight text-center">
+  <span
+    className="bg-gradient-to-r from-rose-600 via-pink-500 to-rose-700 bg-clip-text text-transparent inline-block"
+    style={{
+      fontFamily: "'Dancing Script', cursive",
+      textShadow: "0 4px 8px rgba(236, 72, 153, 0.3)",
+    }}
+  >
+    Happy 21st Birthday, My Love "D" 🎀
+  </span>
+</h1>
+
           <div className="text-4xl md:text-6xl mb-8">
             <span className="animate-bounce inline-block">😘</span>
             <span

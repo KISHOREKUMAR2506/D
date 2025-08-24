@@ -3,9 +3,9 @@ import { ArrowLeft, Heart, Pause, Play, Quote, RefreshCw, Sparkles } from 'lucid
 import React, { useEffect, useRef, useState } from 'react';
 
 const feelingOptions = [
-  { id: 'hug', text: '🫂Hug', color: 'from-blue-400 to-cyan-400', rejected: true },
-  { id: 'kiss', text: '😘 Kiss', color: 'from-pink-400 to-rose-400', rejected: true },
-  { id: 'hugandkiss', text: '🫂😘 Hug and Kiss', color: 'from-purple-400 to-pink-400', rejected: false }
+  { id: 'hug', text: '🫂 \n Hug with me ', color: 'from-blue-400 to-cyan-400', rejected: true },
+  { id: 'kiss', text: '😘 Kiss me ', color: 'from-pink-400 to-rose-400', rejected: true },
+  { id: 'hugandkiss', text: '🫂😘 Both ', color: 'from-purple-400 to-pink-400', rejected: false }
 ];
 
 const rejectionMessages = [
