@@ -224,7 +224,7 @@ function InteractiveConclusionSection() {
               How Do You Feel?
             </h2>
             <p className="text-xl md:text-2xl text-pink-200/90 font-light">
-              After reading my letter... what's your heart saying? 🌝
+              After reading my letter... whats your heart saying? 🌝
             </p>
             {rejectionCount > 0 && (
               <div className="mt-6 animate-bounce">

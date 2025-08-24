@@ -3,14 +3,14 @@ import { Heart, Sparkles } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { useCallback, useEffect, useState } from "react";
 
-// Types for hearts and sparkles
-type HeartObj = {
-  id: number;
-  left: number;
-  delay: number;
-  duration: number;
-  size: number;
-};
+// // Types for hearts and sparkles
+// type HeartObj = {
+//   id: number;
+//   left: number;
+//   delay: number;
+//   duration: number;
+//   size: number;
+// };
 type SparkleObj = {
   id: number;
   left: number;
@@ -115,10 +115,7 @@ export default function BirthdayPage() {
             animation: `twinkle ${sparkle.duration}s ${sparkle.delay}s infinite`,
           }}
         >
-          <Sparkles
-            className="text-yellow-300 opacity-70"
-            size={16}
-          />
+          <Sparkles className="text-yellow-300 opacity-70" size={16} />
         </div>
       ))}
 
@@ -158,7 +155,7 @@ export default function BirthdayPage() {
                 whiteSpace: "nowrap",
               }}
             >
-              Happy 21st Birthday, My Love &ldquo;D&rdquo;
+              Happy 21st Birthday, My Love&semi;
             </span>
           </h1>
           <div className="text-4xl md:text-6xl mb-8">
@@ -174,16 +171,21 @@ export default function BirthdayPage() {
 
         {/* Romantic Message */}
         {showMessage && (
-          <div className="relative max-w-2xl mx-auto mb-12 opacity-0" style={{ animation: "fadeInUp 1s 2s forwards" }}>
+          <div
+            className="relative max-w-2xl mx-auto mb-12 opacity-0"
+            style={{ animation: "fadeInUp 1s 2s forwards" }}
+          >
             <div className="absolute -inset-4 rounded-3xl bg-gradient-to-r from-pink-300 via-rose-200 to-yellow-100 blur-2xl opacity-60 z-0"></div>
             <div className="relative bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 shadow-2xl z-10">
               <p
                 className="text-xl md:text-2xl text-rose-700 font-medium leading-relaxed"
                 style={{ fontFamily: "'Dancing Script', cursive" }}
               >
-                &ldquo;Every moment I&apos;ve enjoyed with you has been magical, and now it&apos;s your special day, Dheepsz..! 
-                Wishing you a pleasant and memorable year ahead. May this day be filled with all the joy, love, and happiness forever. 🥰🎀
-                Oii Ready for your surprise? 🤌🏻&rdquo;
+                &ldquo;Every moment I&apos;ve enjoyed with you has been magical,
+                and now it&apos;s your special day, Dheepsz..! Wishing you a
+                pleasant and memorable year ahead. May this day be filled with
+                all the joy, love, and happiness forever. 🥰🎀 Oii Ready for
+                your surprise? 🤌🏻&rdquo;
               </p>
             </div>
           </div>
@@ -228,26 +230,60 @@ export default function BirthdayPage() {
 
       {/* Custom Animations */}
       <style jsx>{`
-        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap');
+        @import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap");
 
         @keyframes floatUp {
-          0% { transform: translateY(0) rotate(0deg); opacity: 0.7; }
-          50% { opacity: 1; }
-          100% { transform: translateY(-100vh) rotate(180deg); opacity: 0; }
+          0% {
+            transform: translateY(0) rotate(0deg);
+            opacity: 0.7;
+          }
+          50% {
+            opacity: 1;
+          }
+          100% {
+            transform: translateY(-100vh) rotate(180deg);
+            opacity: 0;
+          }
         }
         @keyframes twinkle {
-          0%, 100% { opacity: 0; transform: scale(0.5) rotate(0deg); }
-          50% { opacity: 1; transform: scale(1) rotate(180deg); }
+          0%,
+          100% {
+            opacity: 0;
+            transform: scale(0.5) rotate(0deg);
+          }
+          50% {
+            opacity: 1;
+            transform: scale(1) rotate(180deg);
+          }
         }
         @keyframes fadeInUp {
-          0% { opacity: 0; transform: translateY(30px); }
-          100% { opacity: 1; transform: translateY(0); }
+          0% {
+            opacity: 0;
+            transform: translateY(30px);
+          }
+          100% {
+            opacity: 1;
+            transform: translateY(0);
+          }
         }
         @keyframes fadeInScale {
-          0% { opacity: 0; transform: scale(0.8) translateY(20px); }
-          100% { opacity: 1; transform: scale(1) translateY(0); }
+          0% {
+            opacity: 0;
+            transform: scale(0.8) translateY(20px);
+          }
+          100% {
+            opacity: 1;
+            transform: scale(1) translateY(0);
+          }
         }
-        @keyframes shimmer { 0% { background-position: -1000px 0; } 100% { background-position: 1000px 0; } }
+        @keyframes shimmer {
+          0% {
+            background-position: -1000px 0;
+          }
+          100% {
+            background-position: 1000px 0;
+          }
+        }
       `}</style>
     </main>
   );

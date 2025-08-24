@@ -2,7 +2,7 @@
 import { ArrowRight, Heart, Pause, Play, RotateCcw, Sparkles, Trophy } from 'lucide-react';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
-import { useEffect, useRef, useState, useCallback } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 
 type Card = {
   id: number;
@@ -29,18 +29,18 @@ export default function RomanticMemoryGame() {
   const [hearts, setHearts] = useState<HeartType[]>([]);
   const [mousePosition, setMousePosition] = useState({ x: 50, y: 50 });
   const [isPlaying, setIsPlaying] = useState(false);
-  const [showCelebration, setShowCelebration] = useState(false);
+  const [, setShowCelebration] = useState(false);
   const containerRef = useRef<HTMLDivElement | null>(null);
 
-  const cardImages = [
+  const cardImages = useMemo(() => [
     "/images/photo.jpg",
     "/images/photo1.jpg", 
     "/images/photo2.jpg",
     "/images/photo3.jpg",
     "/images/photo4.jpg",
     "/images/photo5.jpg",
-  ];
-  
+  ], []);
+
   const shuffleCards = useCallback(() => {
     const shuffled = [...cardImages, ...cardImages]
       .map((img) => ({ id: Math.random(), img, matched: false }))
@@ -105,11 +105,17 @@ export default function RomanticMemoryGame() {
       createVictoryAnimation();
     }
   }, [matches, gameCompleted]);
-  const handleChoice = (card: Card) => {
-    if (!disabled && !card.matched) {
-      choiceOne ? setChoiceTwo(card) : setChoiceOne(card);
+
+const handleChoice = (card: Card) => {
+  if (!disabled && !card.matched) {
+    if (choiceOne) {
+      setChoiceTwo(card);
+    } else {
+      setChoiceOne(card);
     }
-  };
+  }
+};
+
 
   const resetTurn = () => {
     setChoiceOne(null);
