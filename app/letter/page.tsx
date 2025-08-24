@@ -285,7 +285,7 @@ function InteractiveConclusionSection() {
               {successMessages[Math.floor(Math.random() * successMessages.length)]}
             </p>
             <p className="text-xl text-pink-300/80">
-              You tried {rejectionCount} times, but you got it right! 🌝🤌🏻
+              You tried {rejectionCount} times, but you got it right! 🤌🏻
             </p>
           </div>
         </div>
@@ -309,7 +309,7 @@ function InteractiveConclusionSection() {
                       }}
                     >
                       Ogayyy website mudinjiduchu... 🌝💖<br />
-                      But kadhool mudiayalaye... <span className="whitespace-nowrap"> Our love? Never ending ra maaa.. 🫂</span>
+                      But kadhool mudiayalaye... <span className="whitespace-nowrap"> Our love? Never ending ra maaa... 🫂</span>
                     </div>
                     {/* Sub Text */}
                   
@@ -532,7 +532,7 @@ export default function MySpecialLetter() {
                   className="text-2xl font-bold"
                   style={{ fontFamily: "'Dancing Script', cursive" }}
                 >
-                  [Your Name] ❤️
+                  IKK 💖
                 </div>
               </div>
             </div>

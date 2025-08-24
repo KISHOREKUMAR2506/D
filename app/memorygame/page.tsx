@@ -219,7 +219,7 @@ const handleChoice = (card: Card) => {
       <header className="relative z-20 text-center pt-12 pb-8">
         <div className="relative inline-block mb-6">
           <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-pink-200 via-rose-200 to-purple-200 bg-clip-text text-transparent">
-            Match Our Memories
+            Match D Memories
           </h1>
           <div className="absolute -top-4 -right-8 animate-bounce">
             <Heart className="w-8 h-8 text-pink-400 fill-current" />
@@ -306,7 +306,7 @@ const handleChoice = (card: Card) => {
                 Congratulations!
               </h2>
               <p className="text-xl text-pink-300/90 mb-2">
-                You&apos;ve matched all our beautiful memories!
+                You&apos;ve matched all beautiful memories!
               </p>
               <p className="text-lg text-pink-400/80 mb-8">
                 Completed in {turns} turns ✨
