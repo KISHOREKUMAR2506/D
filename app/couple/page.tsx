@@ -12,14 +12,18 @@ type CouplePhoto = {
 
 const couplePhotos: CouplePhoto[] = [
   {
-    src: "/images/couple1.jpg",
+    src: "/images/couple4.jpg",
     mood: "magical",
   },
   {
-    src: "/images/couple2.jpg",
+    src: "/images/couple1.jpg",
     mood: "romantic",
   },
   {
+    src: "/images/couple2.jpg",
+    mood: "eternal",
+  },
+    {
     src: "/images/couple3.jpg",
     mood: "eternal",
   },

@@ -33,12 +33,12 @@ export default function RomanticMemoryGame() {
   const containerRef = useRef<HTMLDivElement | null>(null);
 
   const cardImages = useMemo(() => [
-    "/images/photo.jpg",
-    "/images/photo1.jpg", 
-    "/images/photo2.jpg",
+    "/images/photo1.jpg",
+    "/images/photo2.jpg", 
     "/images/photo3.jpg",
     "/images/photo4.jpg",
     "/images/photo5.jpg",
+    "/images/photo6.jpg",
   ], []);
 
   const shuffleCards = useCallback(() => {
