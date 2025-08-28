@@ -551,8 +551,8 @@ export default function MySpecialLetter() {
                     And you know what… Actually <span className="italic font-bold text-rose-700">naa un chins ooda kozhi la vilundhuten deyyy</span> 😭. 
                     Whenever I saw you I always want that happiness in your face to look at those chins holes d and I always want to hug you tightly .
                     Nee nenaikalam ivanku yen ivlo pudikudhu nu but enaku adhuku answer illa aana unta irukum podhu edhunalumey nalaa pogudhu deyyy u clam me... u stble me... nd u come into my lyf as a lucky fairytale for me 
-                    Adhuku example ah dhan naan love panna team RCB win pannuchu... ivlo naal ahh cup eh ilamaa irundhchu pola... but hopefully with god's grace u coem into my lyf and make it happend thats wat destiny uhm pola... my lucky charm.. 
-                    adhukum nee en life la varanum dhan ivlo naal ahh cup eh ilamaa irundhchu pola... but hopefully with god's grace 
+                    Adhuku example ah dhan naan love panna team RCB win pannuchu... ivlo naal ahh cup eh ilamaa irundhchu pola... but hopefully with god&apos;s grace u come into my lyf and make it happend thats wat destiny uhm pola... my lucky charm.. 
+                    adhukum nee en life la varanum dhan ivlo naal ahh cup eh ilamaa irundhchu pola... but hopefully with god&apos;s grace 
                     I got my <span className="font-bold text-rose-600 italic">lucky charm</span> in the 18th season of IPL and 20th age of mine. 
                     lucky and warmful ana person ah enta eppovum irupiya deyyy unoda 100th birthday varaikum enkudaye... just us irukalama deyyy until we can 😭 💕
                   </p>

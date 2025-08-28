@@ -150,7 +150,7 @@ export default function BirthdayPage() {
   <span
     className="bg-gradient-to-r from-rose-600 via-pink-500 to-rose-700 bg-clip-text text-transparent inline-block"
     style={{
-      fontFamily: "'Dancing Script', cursive",
+      fontFamily: "'Sacramento', cursive",
       textShadow: "0 4px 8px rgba(236, 72, 153, 0.3)",
     }}
   >
