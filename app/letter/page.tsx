@@ -493,46 +493,110 @@ export default function MySpecialLetter() {
             </div>
             <Heart className="w-6 h-6 text-rose-500 mx-auto" />
           </div>
-          {/* Letter Content */}
-          <div className="relative text-amber-900 leading-relaxed space-y-6">
-            <div
-              className="text-2xl font-serif italic text-center text-amber-800 mb-8"
-              style={{ fontFamily: "'Dancing Script', cursive" }}
-            >
-              My Dearest [Her Name],
+{/* Letter Content */}
+          <div className="relative text-amber-900 leading-relaxed space-y-8">
+            {/* Beautiful greeting with enhanced styling */}
+            <div className="text-center mb-12">
+              <div
+                className="text-4xl md:text-5xl font-bold text-rose-700 mb-4 relative inline-block"
+                style={{ 
+                  fontFamily: "'Sacramento', cursive",
+                  textShadow: '2px 2px 4px rgba(180, 83, 9, 0.3)',
+                  letterSpacing: '0.02em'
+                }}
+              >
+                My Dearest Dheepsz...! 💝
+                <div className="absolute -top-2 -right-8 animate-bounce">
+                  <Heart className="w-6 h-6 text-rose-500 fill-current" />
+                </div>
+                <div className="absolute -bottom-1 -left-6 animate-pulse">
+                  <Sparkles className="w-4 h-4 text-pink-500" />
+                </div>
+              </div>
+              <div className="w-24 h-0.5 bg-gradient-to-r from-rose-400 to-pink-400 mx-auto rounded-full"></div>
             </div>
+
+            {/* Letter body with romantic styling */}
             <div
-              className="text-lg font-serif leading-loose"
+              className="text-lg font-serif leading-loose text-amber-800 relative"
               style={{
                 fontFamily: "'Crimson Text', serif",
                 backgroundImage: 'repeating-linear-gradient(transparent, transparent 32px, rgba(180, 83, 9, 0.08) 32px, rgba(180, 83, 9, 0.08) 34px)',
                 minHeight: '400px',
-                paddingTop: '8px'
+                paddingTop: '16px'
               }}
             >
-              {/* Replace this with your actual letter */}
-              <p className="mb-6">
-                [Write your beautiful letter here... This is where your heart speaks to hers. 
-                Share your feelings, your memories, your dreams together...]
-              </p>
-              <p className="mb-6">
-                [Continue with more paragraphs of your love letter. 
-                Every word should carry the weight of your affection...]
-              </p>
-              <p className="mb-6">
-                [Add more beautiful sentences about your love, 
-                your promises, your hopes for the future together...]
-              </p>
-              <p className="mb-8">
-                [Conclude with your most heartfelt thoughts...]
-              </p>
-              <div className="text-right mt-12">
-                <div className="text-xl italic mb-2">Forever yours,</div>
-                <div
-                  className="text-2xl font-bold"
-                  style={{ fontFamily: "'Dancing Script', cursive" }}
-                >
+              <div className="space-y-8 px-4">
+                {/* Birthday wish with special styling */}
+                <div className="text-center">
+                  <span className="text-2xl font-bold text-rose-600" style={{ fontFamily: "'Dancing Script', cursive" }}>
+                  Dheepsz, wish you many more happy returns of the day D! 🎀🫂
+                  </span>
+                </div>
+
+                {/* Main letter content with improved formatting */}
+                <div className="space-y-6 text-justify indent-8">
+                  <p className="leading-8">
+                    There are lot of things that with you in the past <span className="font-semibold text-rose-700">3 years</span>... 
+                    yeah 3 years since <span className="font-semibold text-rose-700">30th August</span> day when I text u the message happy birthday. 
+                    Actually apo lam therla that nammkula ivlo dhooram la agum nu... but those lot of conversations between us and 
+                    stories of each other makes much better as rather than as a friend to <span className="italic font-semibold text-rose-700">girlfriend of mine D</span>. 
+                    Una yen pudichuchu lam therla deyyy but patha annikey some instance irundhuku adhan maybe annikey 
+                    unta close aagama ivlo naal aprm una enta kooti2 vandhurku deyyy... ilanaa ivlo dhooram namma pesirpom ah 
+                    unaku ena pudichurkuma therla... maybe idhey mari edho oru instance nammala innum better adutha level ku 
+                    eduthu pochu naa.. yarku theriyum I hope if it happens means there is none other person will be happier than me in this universe..🥹
+                  </p>
+
+                  <p className="leading-8">
+                    And you know what… Actually <span className="italic font-bold text-rose-700">naa un chins ooda kozhi la vilundhuten deyyy</span> 😭. 
+                    Whenever I saw you I always want that happiness in your face to look at those chins holes d and I always want to hug you tightly .
+                    Nee nenaikalam ivanku yen ivlo pudikudhu nu but enaku adhuku answer illa aana unta irukum podhu edhunalumey nalaa pogudhu deyyy u clam me... u stble me... nd u come into my lyf as a lucky fairytale for me 
+                    Adhuku example ah dhan naan love panna team RCB win pannuchu... ivlo naal ahh cup eh ilamaa irundhchu pola... but hopefully with god's grace u coem into my lyf and make it happend thats wat destiny uhm pola... my lucky charm.. 
+                    adhukum nee en life la varanum dhan ivlo naal ahh cup eh ilamaa irundhchu pola... but hopefully with god's grace 
+                    I got my <span className="font-bold text-rose-600 italic">lucky charm</span> in the 18th season of IPL and 20th age of mine. 
+                    lucky and warmful ana person ah enta eppovum irupiya deyyy unoda 100th birthday varaikum enkudaye... just us irukalama deyyy until we can 😭 💕
+                  </p>
+
+                  {/* Love declaration section with special styling */}
+                  <div className="bg-rose-50/50 rounded-2xl p-6 border-l-4 border-rose-400 my-8">
+                    <p className="text-xl leading-8 text-rose-800">
+                      Then finally... <br />
+                      <span className="font-bold text-2xl text-rose-700" style={{ fontFamily: "'Dancing Script', cursive" }}>
+                        I love your character, I love your smile, I love your chins, I love your eyes, 
+                        I love your possessiveness, I love your care, I love your affection, 
+                        I love your cuteness, I love your hug, I love your kiss, 
+                        <span className="text-3xl block mt-2 text-center">
+                          I love your everything... 🤗
+                        </span>
+                      </span>
+                    </p>
+                    <div className="text-center mt-6">
+                      <div className="text-4xl font-bold bg-gradient-to-r from-rose-600 to-pink-600 bg-clip-text text-transparent" 
+                          style={{ fontFamily: "'Dancing Script', cursive" }}>
+                        I Love You Dheepsz.. My D forever maa 💖
+                      </div>
+                    </div>
+                  </div>
+
+                  <p className="text-center text-xl font-semibold text-rose-700 leading-10" style={{ fontFamily: "'Great Vibes', cursive" }}>
+                    Have a great year ahead dheepsz as like the same &ldquo;loosu dheepsz&rdquo; which is more impressive 
+                    and unforgettable forever my one and only love D! 🎀
+                  </p>
+                </div>
+              </div>
+
+              {/* Romantic signature */}
+              <div className="text-right mt-16 pr-4">
+                <div className="text-2xl italic mb-3 text-amber-700" style={{ fontFamily: "'Dancing Script', cursive" }}>
+                  Forever yours,
+                </div>
+                <div className="text-4xl font-bold text-rose-600 relative inline-block"
+                    style={{ fontFamily: "'Dancing Script', cursive" }}>
                   IKK 💖
+                  <div className="absolute -bottom-2 left-0 right-0 h-0.5 bg-gradient-to-r from-rose-400 to-pink-400 rounded-full"></div>
+                </div>
+                <div className="mt-2 text-sm text-amber-600 italic">
+                  With all my heart & soul ✨
                 </div>
               </div>
             </div>
